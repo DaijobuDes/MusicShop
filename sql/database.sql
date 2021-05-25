@@ -49,7 +49,7 @@ CREATE TABLE `musicshop`.`song` (
     `Publisher` VARCHAR(64) NOT NULL , 
     `Genre` VARCHAR(32) NOT NULL , 
     `PublishingDate` INT NOT NULL , 
-    `Cart_ID` INT NOT NULL , 
+    -- `Cart_ID` INT NOT NULL , 
     `Author_ID` INT NOT NULL , 
     `Album_ID` INT NOT NULL , 
     `Publisher_ID` INT NOT NULL , 
