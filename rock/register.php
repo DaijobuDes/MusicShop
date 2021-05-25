@@ -1,6 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+
+    require_once("config.php");
+
+    session_start();
+
+    if (
+        isset($_POST['Username']) &&
+        isset($_POST['Password']) &&
+        isset($_POST['Name'])
+    )
+    {
+        $query = "INSERT INTO `customer`(`Customer_ID`, `Username`, `Name`, `Password`) VALUES (NULL, '". $_POST['Username'] ."', '".  $_POST['Name'] ."', '". $_POST['Password'] ."')";
+
+        $result = mysqli_query($conn, "SELECT * FROM `customer`");
+
+        while ($data = mysqli_fetch_assoc($result))
+        {
+            if ($_POST['Username'] == $data['Username'] || $_POST['Name'] == $data['Name'])
+            {
+                die('<script type="application/javascript">Username already registered.</script>;');
+                header("Location: register.php");
+            }
+        }
+
+        if (!mysqli_query($conn, $query))
+        {
+            header("HTTP/1.1 400 Bad Request");
+            // die("Something went wrong inserting the data.");
+            echo $query. "<br>";
+            echo $_POST['Username']. "<br>";
+            echo $_POST['Name']. "<br>";
+            echo $_POST['Password']. "<br>";
+            // header("Location: register.php");
+            exit();
+        }
+
+        echo $query. "<br>";
+        echo '<script type="application/javascript">alert("Successfully registered. Please login.");</script>';
+        header("HTTP/1.1 200 OK");
+        // header("Location: login.php");
+
+    }
+
+?>
+
 <head>
     <!-- basic -->
     <meta charset="utf-8">
@@ -33,6 +79,14 @@
 <!-- body -->
 
 <body class="main-layout contact-page">
+<<<<<<< Updated upstream:rock/register.html
+=======
+    <!-- loader  -->
+    <!-- <div class="loader_bg">
+        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div> -->
+    <!-- end loader -->
+>>>>>>> Stashed changes:rock/register.php
     <!-- header -->
     <header>
         <!-- header inner -->
@@ -58,7 +112,7 @@
                                         <li> <a href="album.html"> Albums</a> </li>
                                         <li> <a href="songs.html">Songs</a> </li>
                                         <li> <a href="contact.html">Contact</a> </li>
-                                        <li class="active"> <a href="register.html">Register</a> </li>
+                                        <li class="active"> <a href="register.php">Register</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -93,7 +147,7 @@
             <div class=" col-md-6 offset-md-3">
                 <div class="address">
 
-                    <form method="POST">
+                    <form method="POST" action="register.php">
                         <div class="row">
                             <div class="col-sm-12">
                                 <input class="contactus" placeholder="Name" type="text" name="Name">
@@ -105,13 +159,14 @@
                                 <input class="contactus" placeholder="Password" type="password" name="Password">
                             </div>
                             <div class="col-sm-12">
-                                <button class="send">Register</button>
+                                <!-- <button class="send">Register</button> -->
+                                <input type="submit" class="send" id="registerBtn" value="register"></input>
                             </div>
                         </div>
                     </form>
                     <div>
                         <br />
-                        <p>Already have an account? Login <a href="login.html">here.</a></p>
+                        <p>Already have an account? Login <a href="login.php">here.</a></p>
                     </div>
                 </div>
             </div>
