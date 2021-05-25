@@ -60,10 +60,10 @@
                                     <ul class="menu-area-main">
                                         <li> <a href="index.html">Home</a> </li>
                                         <li> <a href="about.html">about</a> </li>
-                                        <li class="active"> <a href="album.html"> Albums</a> </li>
-                                        <li> <a href="songs.html">Songs</a> </li>
+                                        <li> <a href="album.html"> Albums</a> </li>
+                                        <li class="active"> <a href="songs.html">Songs</a> </li>
                                         <li> <a href="contact.html">Contact</a> </li>
-                                        <li> <a href="#login">Login</a> </li>
+                                        <li> <a href="login.html">Login</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="Albumstitlepage">
-                        <h2>Albums</h2>
+                        <h2>Songs</h2>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                 <div class="col-md-12">
                     <div class="titlepage">
 
-                        <span>Take a look at our small collection of Albums from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold. <br>All of them are priced at 250 Pesos</span>
+                        <span>Take a look at our small collection of songs from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold.<br>All of them are priced at 20 Pesos.</span>
                     </div>
                 </div>
             </div>
@@ -110,10 +110,10 @@
                     <div class="Albums-box">
                         <figure>
                             <a href="images/viciousDelicious2.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/viciousDelicious2.jpg"  class="zoom img-fluid " alt="">
+                                <img src="images/haruno.jpg"  class="zoom img-fluid" alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/viciousDelicious.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a  rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
                         </span>
                         </figure>
                     </div>
@@ -122,10 +122,10 @@
                     <div class="Albums-box">
                         <figure>
                             <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/headOfNasa2.jpg" class="zoom img-fluid " alt="">
+                                <img src="images/king.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
                         </span>
                         </figure>
                     </div>
@@ -134,10 +134,10 @@
                     <div class="Albums-box">
                         <figure>
                             <a href="images/eruma.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/eruma2.jpg" class="zoom img-fluid " alt="">
+                                <img src="images/sekibaku.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/eruma.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
                         </span>
                         </figure>
                     </div>
@@ -146,10 +146,10 @@
                     <div class="Albums-box">
                         <figure>
                             <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox ">
-                                <img src="images/clapclapclap2.jpg" class="zoom img-fluid " alt="">
+                                <img src="images/trapped.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
                         </span>
                         </figure>
                     </div>
@@ -158,10 +158,10 @@
                     <div class="Albums-box">
                         <figure>
                             <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/pietyOfAshes2.jpg" class="zoom img-fluid " alt="">
+                                <img src="images/bakamitai.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
                         </span>
                         </figure>
                     </div>
@@ -170,10 +170,10 @@
                     <div class="Albums-box">
                         <figure>
                             <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox ">
-                                <img src="images/americanFootball2.jpg" class="zoom img-fluid " alt="">
+                                <img src="images/neverGonnaGiveYouUp.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/search.png"></a>
+                        <a rel="ligthbox" onclick="addToCart()"><img src="images/search.png"></a>
                         </span>
                         </figure>
                     </div>
@@ -285,7 +285,7 @@
             });
         });
         function addToCart() {
-            alert("Please Login First");
+            alert("Successfuly Added to Cart");
         }
     </script>
 </body>

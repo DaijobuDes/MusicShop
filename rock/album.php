@@ -101,7 +101,7 @@
                 <div class="col-md-12">
                     <div class="titlepage">
 
-                        <span>Take a look at our small collection of Albums from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold. <br>All of them are priced at 250 Pesos</span>
+                        <span>Take a look at our small collection of Albums from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold. <br> All of them are priced at 250 Pesos</span>
                     </div>
                 </div>
             </div>
@@ -285,7 +285,7 @@
             });
         });
         function addToCart() {
-            alert("Please Login First");
+            alert("Successfully Added to Cart");
         }
     </script>
 </body>

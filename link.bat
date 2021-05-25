@@ -1,5 +1,4 @@
 REM Run as admin
 
-mklink /D C:\xampp\htdocs\rock %CD%\rock
-
+mklink /D C:\xampp\htdocs\rock D:\github\musicShop\rock\
 PAUSE
