@@ -1,7 +1,7 @@
 CREATE DATABASE MusicShop;
 
 CREATE TABLE `musicshop`.`customer` ( 
-    `Customer_ID` INT NOT NULL , 
+    `Customer_ID` INT NOT NULL AUTO_INCREMENT, 
     `Username` VARCHAR(64) NOT NULL , 
     `Name` VARCHAR(64) NOT NULL , 
     `Password` VARCHAR(32) NOT NULL , 
