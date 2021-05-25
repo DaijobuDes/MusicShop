@@ -6,11 +6,15 @@
     require_once("config.php");
 
     session_start();
+    
+    $user = $_POST['username'];
+    $pw = $_POST['password'];
 
-    $result = mysqli_query($conn, "SELECT * FROM customer");
+    $query = "SELECT * FROM customer WHERE Username = '$user' AND Password = '$pw'";
 
-    $data = mysqli_fetch_assoc($result);
-
+    $result = mysqli_query($conn, $query);
+    $count = mysqli_num_rows($result);
+    
     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) 
     {
         header("Location: home.php");
@@ -18,7 +22,7 @@
 
     if (isset($_POST['username']) && isset($_POST['password'])) 
     {
-        if ($_POST['username'] == $data['Username'] && $_POST['password'] == $data['Password']) 
+        if ($count != 0) 
         {
             $_SESSION['logged_in'] = true;
             header("Location: home.php");
@@ -63,6 +67,14 @@
 <!-- body -->
 
 <body class="main-layout contact-page">
+<<<<<<< Updated upstream
+=======
+    <!-- loader  -->
+    <!-- <div class="loader_bg">
+        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div> -->
+    <!-- end loader -->
+>>>>>>> Stashed changes
     <!-- header -->
     <header>
         <!-- header inner -->
@@ -133,13 +145,13 @@
                             </div>
                             <div class="col-sm-12">
                                 <!-- <button class="send">Login</button> -->
-                                <input type="submit" class="send" id="loginBtn" value="login">Login</input>
+                                <input type="submit" class="send" id="loginBtn" value="login"></input>
                             </div>
                         </div>
                     </form>
                     <div>
                         <br />
-                        <p>No account yet? Register <a href="register.html">here.</a></p>
+                        <p>No account yet? Register <a href="register.php">here.</a></p>
                     </div>
                 </div>
             </div>
