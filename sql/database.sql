@@ -4,6 +4,7 @@ CREATE TABLE `musicshop`.`customer` (
     `Customer_ID` INT NOT NULL , 
     `Username` VARCHAR(64) NOT NULL , 
     `Name` VARCHAR(64) NOT NULL , 
+    `Password` VARCHAR(32) NOT NULL ,
     PRIMARY KEY (`Customer_ID`)
 ) ENGINE = InnoDB;
 
