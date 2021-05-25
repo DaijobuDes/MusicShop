@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- basic -->
     <meta charset="utf-8">
@@ -34,9 +33,9 @@
 
 <body class="main-layout">
     <!-- loader  -->
-    <div class="loader_bg">
+    <!-- <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-    </div>
+    </div> -->
     <!-- end loader -->
     <!-- header -->
     <header>
@@ -58,12 +57,21 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
+<<<<<<< Updated upstream
                                         <li class = "active"> <a href="home.php">Home</a> </li>
                                         <li> <a href="about.php">about</a> </li>
                                         <li> <a href="album.php"> Albums</a> </li>
                                         <li> <a href="songs.php">Songs</a> </li>
                                         <li> <a href="cart.php">Cart</a> </li>
                                         <li> <a href="logout.php"><?php echo $_SESSION['login']; ?></a> </li>
+=======
+                                        <li class="active"> <a href="index.html">Home</a> </li>
+                                        <li> <a href="about.html">about</a> </li>
+                                        <li> <a href="album.html"> Albums</a> </li>
+                                        <li> <a href="songs.html">Songs</a> </li>
+                                        <li> <a href="contact.html">Contact</a> </li>
+                                        <li> <a href="login.html">Login</a> </li>
+>>>>>>> Stashed changes
                                     </ul>
                                 </nav>
                             </div>
