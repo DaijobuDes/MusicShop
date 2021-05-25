@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+
+    require_once("config.php");
+
+    session_start();
+
+    $result = mysqli_query($conn, "SELECT * FROM customer");
+
+    $data = mysqli_fetch_assoc($result);
+
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) 
+    {
+        header("Location: home.php");
+    }
+
+    if (isset($_POST['username']) && isset($_POST['password'])) 
+    {
+        if ($_POST['username'] == $data['Username'] && $_POST['password'] == $data['Password']) 
+        {
+            $_SESSION['logged_in'] = true;
+            header("Location: home.php");
+        }
+        else
+        {
+            echo '<script type="application/javascript">alert("Incorrect password.");</script>';
+        }
+    }
+
+?>
+
 <head>
     <!-- basic -->
     <meta charset="utf-8">
@@ -63,7 +93,7 @@
                                         <li> <a href="album.html"> Albums</a> </li>
                                         <li> <a href="songs.html">Songs</a> </li>
                                         <li> <a href="contact.html">Contact</a> </li>
-                                        <li class="active"> <a href="login.html">Login</a> </li>
+                                        <li class="active"> <a href="login.php">Login</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -98,16 +128,17 @@
             <div class=" col-md-6 offset-md-3">
                 <div class="address">
 
-                    <form method="POST">
+                    <form method="POST" action="login.php">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Username" type="text" name="Username">
+                                <input class="contactus" placeholder="Username" type="text" name="username">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Password" type="password" name="Password">
+                                <input class="contactus" placeholder="Password" type="password" name="password">
                             </div>
                             <div class="col-sm-12">
-                                <button class="send">Login</button>
+                                <!-- <button class="send">Login</button> -->
+                                <input type="submit" class="send" id="loginBtn" value="login">Login</input>
                             </div>
                         </div>
                     </form>
