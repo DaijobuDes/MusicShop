@@ -24,7 +24,10 @@
     {
         if ($count != 0) 
         {
+            $row = mysqli_fetch_assoc($result);
             $_SESSION['logged_in'] = true;
+            $_SESSION['name'] = $row['Name'];
+            $_SESSION['login'] = $row['Username'];
             header("Location: home.php");
         }
         else
