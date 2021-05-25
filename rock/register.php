@@ -79,14 +79,6 @@
 <!-- body -->
 
 <body class="main-layout contact-page">
-<<<<<<< Updated upstream:rock/register.html
-=======
-    <!-- loader  -->
-    <!-- <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-    </div> -->
-    <!-- end loader -->
->>>>>>> Stashed changes:rock/register.php
     <!-- header -->
     <header>
         <!-- header inner -->
