@@ -1,7 +1,7 @@
 CREATE DATABASE MusicShop;
 
 CREATE TABLE `musicshop`.`customer` ( 
-    `Customer_ID` INT NOT NULL AUTO_INCREMENT, 
+    `Customer_ID` INT NOT NULL AUTO_INCREMENT , 
     `Username` VARCHAR(64) NOT NULL , 
     `Name` VARCHAR(64) NOT NULL , 
     `Password` VARCHAR(32) NOT NULL , 
@@ -9,7 +9,7 @@ CREATE TABLE `musicshop`.`customer` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE `musicshop`.`author` ( 
-    `Author_ID` INT NOT NULL , 
+    `Author_ID` INT NOT NULL AUTO_INCREMENT , 
     `PlaceOfOrigin` VARCHAR(128) NOT NULL , 
     `AlbumsReleased` LONGTEXT NOT NULL , 
     `SinglesReleased` LONGTEXT NOT NULL ,
@@ -17,7 +17,7 @@ CREATE TABLE `musicshop`.`author` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE `musicshop`.`publisher` ( 
-    `Publisher_ID` INT NOT NULL , 
+    `Publisher_ID` INT NOT NULL AUTO_INCREMENT , 
     `PlaceOfOrigin` VARCHAR(128) NOT NULL , 
     `AlbumsPublished` LONGTEXT NOT NULL ,
      `Rating` FLOAT NOT NULL ,
@@ -25,13 +25,13 @@ CREATE TABLE `musicshop`.`publisher` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE `musicshop`.`cart` ( 
-    `Cart_ID` INT NOT NULL , 
+    `Cart_ID` INT NOT NULL AUTO_INCREMENT , 
     `Price` FLOAT NOT NULL , 
     PRIMARY KEY  (`Cart_ID`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE `musicshop`.`album` ( 
-    `Album_ID` INT NOT NULL ,
+    `Album_ID` INT NOT NULL AUTO_INCREMENT ,
     `FullLength` INT NOT NULL , 
     `BandArtist` VARCHAR(64) NOT NULL , 
     `NumberOfSongs` INT NOT NULL ,
@@ -43,7 +43,7 @@ CREATE TABLE `musicshop`.`album` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE `musicshop`.`song` ( 
-    `Song_ID` INT NOT NULL , 
+    `Song_ID` INT NOT NULL AUTO_INCREMENT , 
     `SongLength` INT NOT NULL , 
     `BandArtist` VARCHAR(64) NOT NULL , 
     `Publisher` VARCHAR(64) NOT NULL , 
