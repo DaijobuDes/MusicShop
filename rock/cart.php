@@ -57,13 +57,13 @@
                         <div class="menu-area">
                             <div class="limit-box">
                                 <nav class="main-menu">
-                                    <ul class="menu-area-main">
-                                        <li> <a href="index.html">Home</a> </li>
-                                        <li> <a href="about.html">about</a> </li>
-                                        <li> <a href="album.html"> Albums</a> </li>
-                                        <li class="active"> <a href="songs.html">Songs</a> </li>
+                                <ul class="menu-area-main">
+                                        <li> <a href="home.php">Home</a> </li>
+                                        <li> <a href="about.php">about</a> </li>
+                                        <li> <a href="album.php"> Albums</a> </li>
+                                        <li> <a href="songs.php">Songs</a> </li>
                                         <li class="active"> <a href="cart.php">Cart</a> </li>
-                                        <li> <a href="login.html">Login</a> </li>
+                                        <li> <a href="logout.php"><?php echo $_SESSION['login']; ?></a> </li>
                                     </ul>
                                 </nav>
                             </div>

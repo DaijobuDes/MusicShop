@@ -32,7 +32,7 @@
 </head>
 <!-- body -->
 
-<body class="main-layout album-page">
+<body class="main-layout about-page">
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -59,9 +59,9 @@
                                 <nav class="main-menu">
                                 <ul class="menu-area-main">
                                         <li> <a href="home.php">Home</a> </li>
-                                        <li> <a href="about.php">about</a> </li>
-                                        <li class ="active"> <a href="album.php"> Albums</a> </li>
-                                        <li> <a href="songs.php">Songs</a> </li>
+                                        <li class ="active"> <a href="about.php">about</a> </li>
+                                        <li> <a href="album.php"> Albums</a> </li>
+                                        <li> <a href="songs.html">Songs</a> </li>
                                         <li> <a href="cart.php">Cart</a> </li>
                                         <li> <a href="logout.php"><?php echo $_SESSION['login']; ?></a> </li>
                                     </ul>
@@ -81,108 +81,76 @@
     </header>
     <!-- end header -->
 
-    <div class="Albumsbg">
+    <div class="aboutbg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="Albumstitlepage">
-                        <h2>Albums</h2>
+                    <div class="abouttitlepage">
+                        <h2>about</h2>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-
-    <!-- Albums -->
-    <div class="Albums">
+    <!-- music-box  -->
+    <div class="music-box about">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-
-                        <span>Take a look at our small collection of Albums from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold. <br> All of them are priced at 250 Pesos</span>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+                        <i><img src="icon/icon1.png" alt="icon"/></i>
+                        <h3>Custom Player</h3>
+                        <p>t is a long established fact that a reader will be distracted by the readable </p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/viciousDelicious2.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/viciousDelicious2.jpg"  class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/viciousDelicious.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
-                        </span>
-                        </figure>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+                        <i><img src="icon/icon2.png" alt="icon"/></i>
+                        <h3>Easy customize</h3>
+                        <p>t is a long established fact that a reader will be distracted by the readable </p>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/headOfNasa2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
-                        </span>
-                        </figure>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+                        <i><img src="icon/icon3.png" alt="icon"/></i>
+                        <h3>Music Playlist</h3>
+                        <p>t is a long established fact that a reader will be distracted by the readable </p>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/eruma.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/eruma2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/eruma.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
-                        </span>
-                        </figure>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+                        <i><img src="icon/icon4.png" alt="icon"/></i>
+                        <h3>Custom Gallery</h3>
+                        <p>t is a long established fact that a reader will be distracted by the readable </p>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox ">
-                                <img src="images/clapclapclap2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/pietyOfAshes2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox ">
-                                <img src="images/americanFootball2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/search.png"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
-    <!-- end Albums -->
+    <!-- end music-box  -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 padding">
+                <div class="img-box">
+                    <figure><img src="images/musicbg.jpg" alt="img" /></figure>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 padding">
+                <div class="text-box">
+                    <div class="box">
+                        <i><img src="images/5.png"/></i>
+                        <h3>MEET OUR Music STARS</h3>
+                        <p>It is a long established fact that a reader will be distracted by the readable
+                            <br> content of a page when looking at its layout. The point of using Lorem
+                            <br> content of a page when looking at its layout. The point of using Lorem</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--  footer -->
     <footr>
@@ -284,9 +252,6 @@
                 $(this).removeClass('transition');
             });
         });
-        function addToCart() {
-            alert("Successfully Added to Cart");
-        }
     </script>
 </body>
 
