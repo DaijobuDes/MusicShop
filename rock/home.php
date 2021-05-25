@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+    session_start();
+?>
+
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,7 +66,7 @@
                                         <li> <a href="album.php"> Albums</a> </li>
                                         <li> <a href="songs.php">Songs</a> </li>
                                         <li> <a href="cart.php">Cart</a> </li>
-                                        <li> <a href="logout.php"><?php echo $_SESSION['login']; ?></a> </li>
+                                        <li> <a href="logout.php"><?php echo $_SESSION['name']; ?></a> </li>
                                     </ul>
                                 </nav>
                             </div>
