@@ -110,7 +110,7 @@
                                 <img src="images/viciousDelicious2.jpg"  class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/viciousDelicious.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a href="images/viciousDelicious.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -122,7 +122,7 @@
                                 <img src="images/headOfNasa2.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -134,7 +134,7 @@
                                 <img src="images/eruma2.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/eruma.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a href="images/eruma.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -146,7 +146,7 @@
                                 <img src="images/clapclapclap2.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -158,7 +158,7 @@
                                 <img src="images/pietyOfAshes2.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -170,7 +170,7 @@
                                 <img src="images/americanFootball2.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox" onclick="addToCart()"><img src="images/search.png"></a>
+                        <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox"><img src="images/search.png"></a>
                         </span>
                         </figure>
                     </div>

@@ -110,7 +110,7 @@
                                 <img src="images/haruno.jpg"  class="zoom img-fluid" alt="">
                             </a>
                             <span class="hoverle">
-                        <a  rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a  rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()" onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -122,7 +122,7 @@
                                 <img src="images/king.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()" onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -134,7 +134,7 @@
                                 <img src="images/sekibaku.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()" onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -146,7 +146,7 @@
                                 <img src="images/trapped.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()" onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -158,7 +158,7 @@
                                 <img src="images/bakamitai.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a rel="ligthbox" onclick="addToCart()"><img src="images/cart.png"></a>
+                        <a rel="ligthbox"><img src="images/cart.png"  onclick="addToCart()"></a>
                         </span>
                         </figure>
                     </div>
@@ -170,7 +170,7 @@
                                 <img src="images/neverGonnaGiveYouUp.jpg" class="zoom img-fluid " alt="">
                             </a>
                             <span class="hoverle">
-                        <a rel="ligthbox" onclick="addToCart()"><img src="images/search.png"></a>
+                        <a rel="ligthbox"><img src="images/search.png"></a>
                         </span>
                         </figure>
                     </div>
