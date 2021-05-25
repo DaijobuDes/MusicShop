@@ -60,7 +60,7 @@
                                         <li> <a href="album.php"> Albums</a> </li>
                                         <li> <a href="songs.html">Songs</a> </li>
                                         <li> <a href="cart.php">Cart</a> </li>
-                                        <li> <a href="logout.php"><?php echo $_SESSION['login']; ?></a> </li>
+                                        <li> <a href="logout.php"><?php echo $_SESSION['name']; ?></a> </li>
                                     </ul>
                                 </nav>
                             </div>
