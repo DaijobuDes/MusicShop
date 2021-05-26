@@ -9,12 +9,12 @@
 
     if ($_SESSION['login'] != 'admin')
     {
-        header("Location: logout.php");
+        header("Location: ../home.php");
     }
 
-    if (isset($_POST['place']) && isset($_POST['rating']))
+    if (isset($_POST['songName']) && isset($_POST['artist']))
     {
-        $query = "INSERT INTO `publisher`(`Publisher_ID`, `PublisherName`, `PlaceOfOrigin`, `AlbumsPublished`, `Rating`) VALUES (NULL, '" . $_POST['publisher'] ."','".  $_POST['place'] ."', '".  $_POST['albums'] ."', '". $_POST['rating'] ."')";
+        $query ="INSERT INTO `song`(`Song_ID`, `songName`, `SongLength`, `BandArtist`, `Genre`, `Publisher`, `PublishingDate`, `Author_ID`, `Publisher_ID`) VALUES (NULL,'{$_POST['songName']}',{$_POST['length']},'{$_POST['artist']}','{$_POST['[publisher]']}','{$_POST['genre']}',{$_POST['pubDate']},0, 0)";
 
         if (!mysqli_query($conn, $query))
         {
@@ -108,7 +108,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="contacttitlepage">
-                        <h2>Add Publisher</h2>
+                        <h2>Add Song</h2>
                     </div>
                 </div>
             </div>
@@ -119,20 +119,25 @@
         <div class="row">
             <div class=" col-md-6 offset-md-3">
                 <div class="address">
-
-                    <form method="POST" action="publisher_add.php">
+                    <form method="POST" action="song_add.php">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Publisher Name" type="text" name="publisher" required>
+                                <input class="contactus" placeholder="Song Name" type="text" name="songName" required>
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Place Of Origin" type="text" name="place" required>
+                                <input class="contactus" placeholder="Band/Artist" type="text" name="artist" required>
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Albums Published" type="number" name="albums" required>
+                                <input class="contactus" placeholder="Publisher" type="text" name="publisher" required>
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Rating" type="number" name="rating" required>
+                                <input class="contactus" placeholder="Genre" type="text" name="genre" required>
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Publishing date" type="text" onfocus="(this.type='date')" name="pubDate" required>
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Song Length" type="number" name="length" required>
                             </div>
                             <div class="col-sm-12">
                                 <!-- <button class="send">Login</button> -->
