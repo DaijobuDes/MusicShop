@@ -13,36 +13,40 @@
         isset($_POST['Name'])
     )
     {
-        $query = "INSERT INTO `customer`(`Customer_ID`, `Username`, `Name`, `Password`) VALUES (NULL, '". $_POST['Username'] ."', '".  $_POST['Name'] ."', '". $_POST['Password'] ."')";
-
-        $result = mysqli_query($conn, "SELECT * FROM `customer`");
-
-        while ($data = mysqli_fetch_assoc($result))
-        {
-            if ($_POST['Username'] == $data['Username'] || $_POST['Name'] == $data['Name'])
-            {
-                die('<script type="application/javascript">Username already registered.</script>;');
-                header("Location: register.php");
-            }
-        }
-
-        if (!mysqli_query($conn, $query))
-        {
-            header("HTTP/1.1 400 Bad Request");
-            // die("Something went wrong inserting the data.");
-            echo $query. "<br>";
-            echo $_POST['Username']. "<br>";
-            echo $_POST['Name']. "<br>";
-            echo $_POST['Password']. "<br>";
-            // header("Location: register.php");
-            exit();
-        }
-
-        echo $query. "<br>";
-        echo '<script type="application/javascript">alert("Successfully registered. Please login.");</script>';
-        header("HTTP/1.1 200 OK");
-        // header("Location: login.php");
-
+		if($_POST['Username'] != "admin")
+		{
+			$query = "INSERT INTO `customer`(`Customer_ID`, `Username`, `Name`, `Password`) VALUES (NULL, '". $_POST['Username'] ."', '".  $_POST['Name'] ."', '". $_POST['Password'] ."')";
+	
+			$result = mysqli_query($conn, "SELECT * FROM `customer`");
+	
+			while ($data = mysqli_fetch_assoc($result))
+			{
+				if ($_POST['Username'] == $data['Username'] || $_POST['Name'] == $data['Name'])
+				{
+					die('<script type="application/javascript">Username already registered.</script>;');
+					header("Location: register.php");
+				}
+			}
+	
+			if (!mysqli_query($conn, $query))
+			{
+				header("HTTP/1.1 400 Bad Request");
+				// die("Something went wrong inserting the data.");
+				echo $query. "<br>";
+				echo $_POST['Username']. "<br>";
+				echo $_POST['Name']. "<br>";
+				echo $_POST['Password']. "<br>";
+				// header("Location: register.php");
+				exit();
+			}
+	
+			echo $query. "<br>";
+			echo '<script type="application/javascript">alert("Successfully registered. Please login.");</script>';
+			header("HTTP/1.1 200 OK");
+			// header("Location: login.php");
+		}
+		else
+			echo '<script type="application/javascript">alert("Can\'t do that bud");</script>';
     }
 
 ?>

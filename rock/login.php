@@ -28,6 +28,7 @@
             $_SESSION['logged_in'] = true;
             $_SESSION['name'] = $row['Name'];
             $_SESSION['login'] = $row['Username'];
+            $_SESSION['id'] = $row['Customer_ID'];
             header("Location: home.php");
         }
         else

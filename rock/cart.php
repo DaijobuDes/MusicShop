@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    session_start();
+	session_start();
+
+    require_once("config.php");
+	
+    if (!isset($_SESSION['logged_in'])) 
+    {
+        header("Location: login.php");
+    }
 ?>
 <head>
     <!-- basic -->
@@ -91,13 +98,57 @@
 
     </div>
 
-    <!-- Albums -->
+	<!-- Albums -->
+	<link rel="stylesheet" href="css/tables.css" />
     <div class="Albums">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <span>Here's the summary of things you have to pay us. No refunds.</span>
+						<span>Here's the summary of things you have to pay us. No refunds.</span>
+							<table class="table">
+								<thead class="thead-primary">
+									<tr>
+										<th>Album Name</th>
+										<th>Number of songs</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
+										$query = "SELECT * FROM cart";
+										$result = mysqli_query($conn,$query);
+
+										if($result)
+										{
+											$query = "SELECT AlbumList FROM cart, cartAlbum WHERE cart.cart_id = cartAlbum.cart_id AND cart.customer_id = 1";
+											$result = mysqli_query($conn,$query);
+											$count = mysqli_num_rows($result);
+											
+											if($count > 0)
+											{
+												$row = mysqli_fetch_assoc($result);
+												$list = explode(",", $row['AlbumList']);
+
+												foreach($list as $album)
+												{
+													$query = "SELECT * FROM album WHERE album_id = $album";
+													$result = mysqli_query($conn,$query);
+													$row = mysqli_fetch_assoc($result);
+
+													echo
+													"<tr>
+														<td>".$row['BandArtist']."</td>
+														<td>".$row['NumberOfSongs']."</td>
+														<td>Php 250</td>
+													</tr>";
+												}
+											}
+										}
+									?>
+								</tbody>
+							</table>
+                    	</div>
                     </div>
                 </div>
             </div>
