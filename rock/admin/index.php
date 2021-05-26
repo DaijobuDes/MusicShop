@@ -7,8 +7,6 @@
         header("Location: logout.php");
     }
 
-
-
 ?>
     <head>
         <title>Management</title>
