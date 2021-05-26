@@ -3,6 +3,11 @@
 
     session_start();
 
+    if ($_SESSION['login'] != 'admin')
+    {
+        header("Location: logout.php");
+    }
+
     if (isset($_POST['place']) && isset($_POST['rating']))
     {
         $query = "INSERT INTO `publisher`(`Publisher_ID`, `PublisherName`, `PlaceOfOrigin`, `AlbumsPublished`, `Rating`) VALUES (NULL, '" . $_POST['publisher'] ."','".  $_POST['place'] ."', '".  $_POST['albums'] ."', '". $_POST['rating'] ."')";
