@@ -185,9 +185,9 @@
 											"<tr>
 												<td>".$songs['songName']."</td>
 												<td></td>
-												<td style=\"text-align: right;\">Php 250</td>
+												<td style=\"text-align: right;\">Php 20</td>
 											</tr>";
-											$price += 250;
+											$price += 20;
 										}
 									?>
 									</tbody>
