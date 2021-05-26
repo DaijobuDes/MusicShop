@@ -92,6 +92,7 @@
     </div>
 
     <!-- Albums -->
+	<form method="POST" action="addSongToCart.php">
     <div class="Albums">
         <div class="container">
             <div class="row">
@@ -110,26 +111,27 @@
 					$temp = 1;
 					while ($row=mysqli_fetch_assoc($result))
 					{
-						echo	'<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
+						echo    '<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
 									<div class = "Albums-box">
 										<figure>
 											<a class="fancybox" rel="lightbox">
 												<img src="images/album'.$row['Album_ID'].'.jpg" class = "zoom img-fluid" alt="">
 											</a>
 											<span class = "hoverle" title = "'.$row['albumName'].'">
-												<a rel="lightbox" onclick="addToCart()"><img src="images/cart.png"></a>
+												<button style="background-color: Transparent" type="submit" name="Buy" value="'.$row['Album_ID'].'"">
+													<img src="images/cart.png">
+												</button>
 											</span>
 										</figure>
 									</div>                
 								</div>';
-
-						// echo "<button value = ".$row['Album_ID'].">asd</button>";
 						$temp++;
 					} 
-                ?>
+				?>
             </div>
         </div>
     </div>
+	</form>
     <!-- end Albums -->
 
     <!--  footer -->
