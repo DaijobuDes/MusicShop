@@ -3,12 +3,12 @@
 <?php
 	session_start();
 
-    require_once("config.php");
+	require_once("config.php");
 	
-    if (!isset($_SESSION['logged_in'])) 
-    {
-        header("Location: login.php");
-    }
+	if (!isset($_SESSION['logged_in'])) 
+	{
+		header("Location: login.php");
+	}
 ?>
 <head>
     <!-- basic -->
@@ -106,54 +106,111 @@
                 <div class="col-md-12">
                     <div class="titlepage">
 						<span>Here's the summary of things you have to pay us. No refunds.</span>
-							<table class="table">
-								<thead class="thead-primary">
-									<tr>
-										<th>Album Name</th>
-										<th>Number of songs</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php 
-										$query = "SELECT * FROM cart";
-										$result = mysqli_query($conn,$query);
+						<?php
+							$query = "SELECT * FROM cart";
+							$result = mysqli_query($conn,$query);
+							$count = mysqli_num_rows($result);
 
-										if($result)
+							if($count)
+							{
+								$price = 0;
+								$query = "SELECT AlbumList FROM cart, cartAlbum WHERE cart.cart_id = cartAlbum.cart_id AND cart.customer_id = ".$_SESSION['id'];
+								$result = mysqli_query($conn,$query);
+								$count = mysqli_num_rows($result);
+								
+								if($count > 0)
+								{
+									?>
+									<br>
+									<br>
+									<br>
+									<h1 align="left">Album</h1>
+									<table class="table">
+										<thead class="thead-primary">
+											<tr>
+												<th>Album Name</th>
+												<th>Number of songs</th>
+												<th>Price</th>
+											</tr>
+										</thead>
+										<tbody>
+									<?php
+
+									while($row = mysqli_fetch_assoc($result))
+									{
+										$query = "SELECT * FROM album WHERE album_id = ".$row['AlbumList'];
+										$alres = mysqli_query($conn,$query);
+										$albums = mysqli_fetch_assoc($alres);
+
+										echo
+										"<tr>
+											<td>".$albums['albumName']."</td>
+											<td>".$albums['NumberOfSongs']."</td>
+											<td style=\"text-align: right;\">Php 250</td>
+										</tr>";
+										$price += 250;
+									}
+									?>
+									</tbody>
+									</table>
+									<?php
+								}
+								
+								$query = "SELECT SongList FROM cart, cartSong WHERE cart.cart_id = cartSong.card_id AND cart.customer_id = ".$_SESSION['id'];
+								$result = mysqli_query($conn,$query);
+								$count = mysqli_num_rows($result);
+								
+								if($count > 0)
+								{
+									?>
+									<br>
+									<h1 align="left">Songs</h1>
+									<table class="table">
+										<thead class="thead-primary">
+											<tr>
+												<th>Song Name</th>
+												<th></th>
+												<th>Price</th>
+											</tr>
+										</thead>
+										<tbody>
+									<?php
+
+										while($row = mysqli_fetch_assoc($result))
 										{
-											$query = "SELECT AlbumList FROM cart, cartAlbum WHERE cart.cart_id = cartAlbum.cart_id AND cart.customer_id = 1";
-											$result = mysqli_query($conn,$query);
-											$count = mysqli_num_rows($result);
-											
-											if($count > 0)
-											{
-												$row = mysqli_fetch_assoc($result);
-												$list = explode(",", $row['AlbumList']);
+											$query = "SELECT * FROM song WHERE song_id = ".$row['SongList'];
+											$songres = mysqli_query($conn,$query);
+											$songs = mysqli_fetch_assoc($songres);
 
-												foreach($list as $album)
-												{
-													$query = "SELECT * FROM album WHERE album_id = $album";
-													$result = mysqli_query($conn,$query);
-													$row = mysqli_fetch_assoc($result);
-
-													echo
-													"<tr>
-														<td>".$row['BandArtist']."</td>
-														<td>".$row['NumberOfSongs']."</td>
-														<td>Php 250</td>
-													</tr>";
-												}
-											}
+											echo
+											"<tr>
+												<td>".$songs['songName']."</td>
+												<td></td>
+												<td style=\"text-align: right;\">Php 250</td>
+											</tr>";
+											$price += 250;
 										}
 									?>
-								</tbody>
-							</table>
-                    	</div>
+									</tbody>
+									</table>
+									<?php
+								}
+								?>
+
+								<div align="right">
+									<h3>Total Price: <?php echo $price ?></h3>
+									<form method="POST" action="cart.php">
+										<button type="submit" name="Buy" value="Buy" formaction="cart.php">Checkout</button>
+									</form>
+								</div>
+								<?php
+							}
+						?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+	</div>
     <!-- end Albums -->
 
     <!-- Javascript files-->

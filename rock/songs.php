@@ -92,93 +92,47 @@
     </div>
 
     <!-- Albums -->
-    <div class="Albums">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-
-                        <span>Take a look at our small collection of songs from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold.<br>All of them are priced at 20 Pesos.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/viciousDelicious2.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/haruno.jpg"  class="zoom img-fluid" alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a  rel="ligthbox"><img src="images/cart.png" onclick="addToCart()"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/king.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a rel="ligthbox"><img src="images/cart.png" onclick="addToCart()""></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/eruma.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/sekibaku.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a rel="ligthbox"><img src="images/cart.png" onclick="addToCart()""></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox ">
-                                <img src="images/trapped.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a rel="ligthbox"><img src="images/cart.png" onclick="addToCart()""></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/bakamitai.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a rel="ligthbox"><img src="images/cart.png" onclick="addToCart()"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox ">
-                                <img src="images/neverGonnaGiveYouUp.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a rel="ligthbox"><img src="images/search.png"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+	<form method="POST" action="addSongToCart.php">
+		<div class="Albums">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="titlepage">
+							<span>Take a look at our small collection of songs from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold.<br>All of them are priced at 20 Pesos.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<?php
+						$con =mysqli_connect("localhost","root","","musicShop");
+						$query="Select * from song";
+						$result=mysqli_query($con,$query);
+						$temp = 1;
+						while ($row=mysqli_fetch_assoc($result))
+						{
+							echo    '<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
+										<div class = "Albums-box">
+											<figure>
+												<a class="fancybox" rel="lightbox">
+													<img src="images/song'.$row['Song_ID'].'.jpg" class = "zoom img-fluid" alt="">
+												</a>
+												<span class = "hoverle" title = "'.$row['songName'].'">
+													<a rel="lightbox"">
+														<button style="background-color: Transparent" type="submit" name="Buy" value="'.$row['Song_ID'].'"">
+															<img src="images/cart.png">
+														</button>
+													</a>
+												</span>
+											</figure>
+										</div>
+									</div>';
+							$temp++;
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</form>
     <!-- end Albums -->
 
     <!--  footer -->

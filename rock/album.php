@@ -103,79 +103,30 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/viciousDelicious2.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/viciousDelicious2.jpg"  class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/viciousDelicious.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png" onclick="addToCart()"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/headOfNasa2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/headOfNasa.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png" onclick="addToCart()"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/eruma.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/eruma2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/eruma.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png" onclick="addToCart()"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox ">
-                                <img src="images/clapclapclap2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/clapclapclap.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png" onclick="addToCart()"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox">
-                                <img src="images/pietyOfAshes2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/pietyOfAshes.jpg" class="fancybox" rel="ligthbox"><img src="images/cart.png" onclick="addToCart()"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-                    <div class="Albums-box">
-                        <figure>
-                            <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox ">
-                                <img src="images/americanFootball2.jpg" class="zoom img-fluid " alt="">
-                            </a>
-                            <span class="hoverle">
-                        <a href="images/American_football_band_lp_cover.png" class="fancybox" rel="ligthbox"><img src="images/search.png"></a>
-                        </span>
-                        </figure>
-                    </div>
-                </div>
+				<?php
+					$con =mysqli_connect("localhost","root","","musicShop");
+					$query="Select * from album";
+					$result=mysqli_query($con,$query);
+					$temp = 1;
+					while ($row=mysqli_fetch_assoc($result))
+					{
+						echo	'<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
+									<div class = "Albums-box">
+										<figure>
+											<a class="fancybox" rel="lightbox">
+												<img src="images/album'.$row['Album_ID'].'.jpg" class = "zoom img-fluid" alt="">
+											</a>
+											<span class = "hoverle" title = "'.$row['albumName'].'">
+												<a rel="lightbox" onclick="addToCart()"><img src="images/cart.png"></a>
+											</span>
+										</figure>
+									</div>                
+								</div>';
 
+						// echo "<button value = ".$row['Album_ID'].">asd</button>";
+						$temp++;
+					} 
+                ?>
             </div>
         </div>
     </div>
