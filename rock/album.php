@@ -92,45 +92,44 @@
     </div>
 
     <!-- Albums -->
-	<form method="POST" action="addSongToCart.php">
-    <div class="Albums">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-
-                        <span>Take a look at our small collection of Albums from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold. <br> All of them are priced at 250 Pesos</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-				<?php
-					$con =mysqli_connect("localhost","root","","musicShop");
-					$query="Select * from album";
-					$result=mysqli_query($con,$query);
-					$temp = 1;
-					while ($row=mysqli_fetch_assoc($result))
-					{
-						echo    '<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
-									<div class = "Albums-box">
-										<figure>
-											<a class="fancybox" rel="lightbox">
-												<img src="images/album'.$row['Album_ID'].'.jpg" class = "zoom img-fluid" alt="">
-											</a>
-											<span class = "hoverle" title = "'.$row['albumName'].'">
-												<button style="background-color: Transparent" type="submit" name="Buy" value="'.$row['Album_ID'].'"">
-													<img src="images/cart.png">
-												</button>
-											</span>
-										</figure>
-									</div>                
-								</div>';
-						$temp++;
-					} 
-				?>
-            </div>
-        </div>
-    </div>
+	<form method="POST" action="addAlbumToCart.php">
+		<div class="Albums">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="titlepage">
+							<span>Take a look at our small collection of Albums from various Scratch Records Artists.<br>Fret not, they are properly fed and paid the right amount of 10 pents per million copies sold. <br> All of them are priced at 250 Pesos</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<?php
+						$con =mysqli_connect("localhost","root","","musicShop");
+						$query="Select * from album";
+						$result=mysqli_query($con,$query);
+						$temp = 1;
+						while ($row=mysqli_fetch_assoc($result))
+						{
+							echo	'<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
+										<div class = "Albums-box">
+											<figure>
+												<a class="fancybox" rel="lightbox">
+													<img src="images/album'.$row['Album_ID'].'.jpg" class = "zoom img-fluid" alt="">
+												</a>
+												<span class = "hoverle" title = "'.$row['albumName'].'">
+													<button style="background-color: Transparent" type="submit" name="Buy" value="'.$row['Album_ID'].'"">
+														<img src="images/cart.png">
+													</button>
+												</span>
+											</figure>
+										</div>
+									</div>';
+							$temp++;
+						} 
+					?>
+				</div>
+			</div>
+		</div>
 	</form>
     <!-- end Albums -->
 

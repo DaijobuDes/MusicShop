@@ -175,7 +175,6 @@
 										</thead>
 										<tbody>
 									<?php
-
 										while($row = mysqli_fetch_assoc($result))
 										{
 											$query = "SELECT * FROM song WHERE song_id = ".$row['SongList'];

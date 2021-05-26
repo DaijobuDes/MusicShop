@@ -15,19 +15,19 @@
 		$cartres = mysqli_query($conn,$query);
 		$row = mysqli_fetch_assoc($cartres);
 
-		$query = "SELECT * FROM cartsong WHERE songList = ".$_POST['Buy']." AND card_id = ".$row['Cart_ID'];
-		$songres = mysqli_query($conn,$query);
+		$query = "SELECT * FROM cartalbum WHERE albumList = ".$_POST['Buy']." AND cart_id = ".$row['Cart_ID'];
+		$albmres = mysqli_query($conn,$query);
 		
-		if($songs = mysqli_fetch_assoc($songres))
+		if($songs = mysqli_fetch_assoc($albmres))
 		{
 			echo '<script type="application/javascript">alert("You already added this song to the cart.");</script>';
 		}
 		else
 		{
-			$query = "INSERT INTO cartsong VALUES(".$row['Cart_ID'].",".$_POST['Buy'].")";
-			$insSong = mysqli_query($conn,$query);
+			$query = "INSERT INTO cartalbum VALUES(".$row['Cart_ID'].",".$_POST['Buy'].")";
+			$insAlbm = mysqli_query($conn,$query);
 
-			if($insSong)
+			if($insAlbm)
 			{
 				echo '<script type="application/javascript">alert("Success.");</script>';
 			}
